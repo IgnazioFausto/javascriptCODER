@@ -1,9 +1,22 @@
-let nombreIngresado = prompt("Ingresá tu nombre");
-let apellidoIngresado = prompt("Ingresá tu apellido");
+/* SIMULADOR: Calcular precio final aplicando un 10% de descuento */
 
-if ((nombreIngresado !="") && (apellidoIngresado !="")) {
-    alert ("¡Hola y bienvenido " +nombreIngresado +" " +apellidoIngresado +"!")
+/* inicializo variables */
+let costoCuadro = prompt("Ingresá el precio del cuadro:")/* pido el dato */
+let descuento = (costoCuadro) * 10 / 100;
+let costoFinal = 0;
+
+/* declaro función */
+function aplicarDescuento (){
+   let costoFinal = costoCuadro - descuento;
+   alert("El precio final con 10% de descuento es: $ " + costoFinal)/* muestro */
 }
-else {
-    alert("Datos incompletos")
-}
+/* llamo a la función pasándole los parámetros necesarios */
+aplicarDescuento(costoCuadro, descuento)
+
+
+
+
+
+
+
+
