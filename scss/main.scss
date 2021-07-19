@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    position: relative;
+    width: 1280px;
+    justify-content: center;
+    background-color: rgba(245, 222, 179, 0.288);
+}
+header {
+    display: inline-block;
+    background-color: white;
+    position: relative;
+    width: 1280px;
+    height: 75px;
+    text-align: center;
+}
+h1 {
+    display: inline-block;
+    color: black;
+    font-size: 50px;
+    margin-top: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    transition-duration: 3s;
+}
+h1:hover {
+    letter-spacing: 15px;
+}
+nav {
+    display: inline;
+    position: relative;
+    text-align: center;
+    height: 60px;
+}
+ul {
+    background-color: white;
+    width: auto; 
+    height: 60px;
+}
+ul li{
+    display: inline;
+    position: relative;
+    width: auto;
+    font-weight: 100;
+}
+nav ul li a {
+    display: inline-block;
+    position: relative;
+    color: rgb(126, 90, 43);
+    text-decoration: none;
+    font-size: 30px;
+    padding: 12px 40px;
+    font-weight: 100;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 0.6;
+    transition-duration: all 2s;
+}
+nav ul li a:hover{
+    opacity: 1;
+    text-decoration-line:overline;
+    text-decoration-style: solid;
+    text-decoration-color: rgba(126, 90, 43, 0.459);
+}
+div.obras {
+    display: inline-block;
+    position: relative;
+    width: 780px;
+    padding-left: 320px;
+    margin-top: 20px ;
+}
+img.cuadro {
+    display: block;
+    position: flex;
+    float:left;
+    width: 300px;
+    padding: 10px;
+}

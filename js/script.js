@@ -4,23 +4,24 @@ function Cuadro (titulo, medidas, precio) {
    this.medidas = medidas;
    this.precio = precio;
 }
-const Cuadro1 = new Cuadro ("Perro Salchicha", "75cm X 98cm", 7500)
-const Cuadro2 = new Cuadro ("Zorro de Fuego", "85cm X 99cm", 6500)
-const Cuadro3 = new Cuadro ("Mar", "125cm X 90cm", 5700)
-const Cuadro4 = new Cuadro ("Vuelo", "45cm X 68cm", 2500)
-const Cuadro5 = new Cuadro ("Pareja", "75cm X 75cm", 2900)
-const Cuadro6 = new Cuadro ("Pájaro", "45cm X 45cm", 1500)
+const Perro = new Cuadro ("Perro", "75cm X 98cm", 7500)
+const Zorro = new Cuadro ("Zorro", "85cm X 99cm", 6500)
+const Mar = new Cuadro ("Mar", "125cm X 90cm", 5700)
+const Vuelo = new Cuadro ("Vuelo", "45cm X 68cm", 2500)
+const Pareja = new Cuadro ("Pareja", "75cm X 75cm", 2900)
+const Pájaro = new Cuadro ("Pájaro", "45cm X 45cm", 1500)
 
+const arrayCuadros = [Perro, Zorro, Mar, Vuelo, Pareja, Pájaro];
+   
+/* const baratos = arrayCuadros.filter(Cuadro => Cuadro.precio < 3000);  */
 
-const arrayCuadros = [Cuadro1, Cuadro2, Cuadro3, Cuadro4, Cuadro5, Cuadro6];
-   for (let index = 0; index < arrayCuadros.length; index++) {
-      console.log(arrayCuadros[index])
-}
+/* pidiendo información al usuario */
+let CuadroElegido = prompt("Ingresá el nombre del cuadro (Perro, Zorro, Mar, Vuelo, Pareja o Pájaro)")
+var PrecioFinal = 0;
+alert("Se aplicará el 10% de descuento")
 
-const baratos = arrayCuadros.filter(Cuadro => Cuadro.precio < 3000); 
-console.log(baratos);
-
-
+/* encontrando el cuadro elegido */
+/* HACER CON SWITCH LPM */
 
 
 
