@@ -14,38 +14,24 @@ const pájaro = new Cuadro ("Pájaro", "45cm X 45cm", 1500)
 /* array con todos los cuadros */
 const arrayCuadros = [perro, zorro, mar, vuelo, pareja, pájaro];
 
-/* pidiendo información al usuario */
-let cuadroElegido = prompt("Ingresá el nombre del cuadro (Perro, Zorro, Mar, Vuelo, Pareja o Pájaro)");
-/* let precioFinal = 0;*/
-/* informar que se aplicará el descuento */
-alert("Se aplicará el 10% de descuento")
+let cuadroEncontrado = undefined;
 
-/* encontrando el cuadro elegido */
-/* if (CuadroElegido === perro.titulo) {
-   alert("El precio final del cuadro es: $ " + (perro.precio - (perro.precio * 10 / 100)))
+/* Function descuento 10% */
+function descuento10 () {
+   return cuadroEncontrado.precio - (cuadroEncontrado.precio * 10 / 100)
+}
+/* buscando el cuadro */
+do {
+   let cuadroElegido = prompt("Ingresá el nombre del cuadro (Perro, Zorro, Mar, Vuelo, Pareja o Pájaro)");//se pide el dato
+
+   cuadroEncontrado = arrayCuadros.find( cuadro => cuadro.titulo == cuadroElegido );
 }  
-   else if (CuadroElegido === zorro.titulo) {
-      alert("El precio final del cuadro es: $ " + (zorro.precio - (zorro.precio * 10 / 100)))
-   }  
-   else if (CuadroElegido === mar.titulo) {
-      alert("El precio final del cuadro es: $ " + (mar.precio - (mar.precio * 10 / 100)))
-   }
-   else if (CuadroElegido === vuelo.titulo) {
-      alert("El precio final del cuadro es: $ " + (vuelo.precio - (vuelo.precio * 10 / 100)))
-   }
-   else if (CuadroElegido === pareja.titulo) {
-      alert("El precio final del cuadro es: $ " + (pareja.precio - (pareja.precio * 10 / 100)))
-   }else if (CuadroElegido === pájaro.titulo) {
-      alert("El precio final del cuadro es: $ " + (pájaro.precio - (pájaro.precio * 10 / 100)))
-   }
-   else {
-      alert("No has elegido un cuadro.")
-   } */
-  
+   while(cuadroEncontrado == undefined);
 
+   alert("El precio del cuadro es: $"+ cuadroEncontrado.precio)//mostrar precio sin descuento
+   alert("Se aplicará el 10% de descuento")
+   alert("El precio final es: $" + descuento10(cuadroEncontrado))//mostrar precio con descuento
    
-
-
    /* para filtrar por precios más adelante */
    /* const baratos = arrayCuadros.filter(Cuadro => Cuadro.precio < 3000);  */
 
