@@ -1,4 +1,14 @@
-/* construyendo */
+
+var nombre = prompt("Hola, escribí tu nombre!");
+localStorage.setItem("nombre",nombre);
+
+let parrafo = document.createElement("p");
+// Insertar HTML interno
+parrafo.innerHTML= "¡Bienvenido " + nombre + "!"; 
+// Añadir el nodo Element como hijo de body
+document.body.appendChild(parrafo);
+
+/* construyendo 
 function Cuadro (titulo, medidas, precio) {
    this.titulo = titulo;
    this.medidas = medidas;
@@ -11,16 +21,16 @@ const vuelo = new Cuadro ("Vuelo", "45cm X 68cm", 2500)
 const pareja = new Cuadro ("Pareja", "75cm X 75cm", 2900)
 const pájaro = new Cuadro ("Pájaro", "45cm X 45cm", 1500)
 
-/* array con todos los cuadros */
+/* array con todos los cuadros 
 const arrayCuadros = [perro, zorro, mar, vuelo, pareja, pájaro];
 
 let cuadroEncontrado = undefined;
 
-/* Function descuento 10% */
+/* Function descuento 10% 
 function descuento10 () {
    return cuadroEncontrado.precio - (cuadroEncontrado.precio * 10 / 100)
 }
-/* buscando el cuadro */
+/* buscando el cuadro 
 do {
    let cuadroElegido = prompt("Ingresá el nombre del cuadro (Perro, Zorro, Mar, Vuelo, Pareja o Pájaro)");//se pide el dato
 
