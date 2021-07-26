@@ -6,7 +6,7 @@ body {
     position: relative;
     width: auto;
     justify-content: center;
-    background-image: url(img/background.jpg);
+    background-image: url(/img/background.jpg);
     background-size:cover;
 }
 h1 {
@@ -14,7 +14,7 @@ h1 {
     position: relative;
     text-align: center;
     color: black;
-    font-size: 50px;
+    font-size: 55px;
     margin-top: 10px;
     font-family: 'Alegreya', serif;
     font-weight: 100;
@@ -86,7 +86,7 @@ img.cuadro {
 }
 #saludo {
     background-color: transparent;
-    font-size: 30px;
+    font-size: 35px;
     display:block;
     position: relative;
     text-align:center;
@@ -99,7 +99,7 @@ img.cuadro {
     grid-template-rows: 300px 300px;
     max-width: 800px;
     padding: 1rem;
-    margin: 50px;
+    margin: 0;
 }
 #cuadro1 {
     grid-row: 1 / 3;
