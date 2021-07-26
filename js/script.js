@@ -1,17 +1,13 @@
 
 var nombre = prompt("Hola, escribí tu nombre!");
-/* localStorage.setItem("nombre",nombre); */
-/* 
-let parrafo = document.createElement("p");
-// Insertar HTML interno
-var texto = document.createTextNode("¡Bienvenido " + nombre + "! Espero sea de tu agrado mi obra.");
-div.appendChild(texto) ;
-// Añadir el nodo Element como hijo de body
- */
-var para = document.createElement("P");                       // Create a <p> node
-var t = document.createTextNode("¡Hola " + nombre + "! Espero te agrade mi obra.");      // Create a text node
-para.appendChild(t);                                          // Append the text to <p>
-document.getElementById("saludo").appendChild(para);           // Append <p> to <div> with id="myDIV"
+
+var parrafo = document.createElement("P");                      
+var t = document.createTextNode("¡Hola " + nombre + "! Espero te agrade mi obra...");    
+parrafo.appendChild(t);                                         
+document.getElementById("saludo").appendChild(parrafo);          
+
+
+
 /* construyendo 
 function Cuadro (titulo, medidas, precio) {
    this.titulo = titulo;
