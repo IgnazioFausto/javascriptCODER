@@ -6,7 +6,7 @@ body {
   position: relative;
   width: auto;
   justify-content: center;
-  background-image: url(/img/background.jpg);
+  background-image: url(img/background.jpg);
   background-size: cover; }
 
 h1 {
