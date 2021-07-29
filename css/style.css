@@ -164,3 +164,14 @@ div.containerCuadros:hover .overlay {
   opacity: 1;
   transform: scale(1);
   padding-top: 50%; }
+
+.divCarrito {
+  width: auto;
+  height: 100px; }
+
+.carrito {
+  width: 55px;
+  transition-duration: 0.3s; }
+
+.carrito:hover {
+  width: 58px; }
