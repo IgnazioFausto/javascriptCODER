@@ -171,7 +171,8 @@ div.containerCuadros:hover .overlay {
 
 .carrito {
   width: 55px;
-  transition-duration: 0.3s; }
+  transition-duration: 0.3s;
+  cursor: pointer; }
 
 .carrito:hover {
-  width: 58px; }
+  cursor: pointer; }

@@ -21,16 +21,20 @@ function Cuadro (titulo, medidas, precio) {
     return cuadroEncontrado.precio - (cuadroEncontrado.precio * 10 / 100)
  }
  // buscando el cuadro 
- do {
-    let cuadroElegido = prompt("Ingresá el nombre del cuadro (Perro, Zorro, Mar, Vuelo, Pareja o Pájaro)");//se pide el dato
+
+ function comprar() {
+   do {
+      let cuadroElegido = prompt("Ingresá el nombre del cuadro (Perro, Zorro, Mar, Vuelo, Pareja o Pájaro)");//se pide el dato
+   
+      cuadroEncontrado = arrayCuadros.find( cuadro => cuadro.titulo == cuadroElegido );
+   }  
+      while(cuadroEncontrado == undefined);
+   
+      alert("El precio del cuadro es: $"+ cuadroEncontrado.precio)//mostrar precio sin descuento
+      alert("Se aplicará el 10% de descuento")
+      alert("El precio final es: $" + descuento10(cuadroEncontrado))//mostrar precio con descuento
+         
+ }
  
-    cuadroEncontrado = arrayCuadros.find( cuadro => cuadro.titulo == cuadroElegido );
- }  
-    while(cuadroEncontrado == undefined);
- 
-    alert("El precio del cuadro es: $"+ cuadroEncontrado.precio)//mostrar precio sin descuento
-    alert("Se aplicará el 10% de descuento")
-    alert("El precio final es: $" + descuento10(cuadroEncontrado))//mostrar precio con descuento
-    
     // para filtrar por precios más adelante 
     //const baratos = arrayCuadros.filter(Cuadro => Cuadro.precio < 3000);

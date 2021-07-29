@@ -176,8 +176,8 @@ div.containerCuadros {
   .carrito {
       width: 55px;
       transition-duration: 0.3s;
+      cursor: pointer;
   }
-  .carrito:hover {
-      width: 58px;
-
-  }
+.carrito:hover {
+    cursor: pointer;
+}
