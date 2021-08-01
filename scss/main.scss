@@ -67,14 +67,6 @@ nav ul li a:hover{
     padding-left: 20px;
     padding-right: 10px;
 }
-img.cuadro {
-    object-fit:cover;
-    height:100%; 
-    border-radius: 10px;
-    transition-duration: 0.5s;
-    display: block;
-    width: 100%;
-}
 #saludo {
     background-color: transparent;
     font-size: 35px;
@@ -82,35 +74,78 @@ img.cuadro {
     position: relative;
     text-align:center;
     font-family: 'Caveat', cursive;
+    text-decoration: none;
 }
 .galeria {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: 300px 300px 300px;
-    grid-template-rows: 300px 300px;
-    max-width: 960px;
-    padding: 1rem;
-    margin: auto;
-    height: auto;
+    margin: 1rem auto;
+    max-width:100%;
+    padding:0 20px;
+    box-sizing: border-box;
+    column-count: 3;
+    column-gap: 10px;
 }
-#cuadro1 {
-    grid-row: 2 / 1;
+/* Móviles en horizontal o tablets en vertical */
+@media (max-width: 767px) { 
+    .galeria {
+        columns:2;
+    }
 }
-#cuadro2 {
-    grid-row: 2 / 1;
+/* Móviles en vertical */
+@media (max-width: 480px) {
+    .galeria {
+        columns: 1;
+    }
+    h1 {
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        color: black;
+        font-size: 40px;
+        margin-top: 10px;
+        font-family: 'Alegreya', serif;
+        font-weight: 100;
+        transition-duration: 0.8s;
+        letter-spacing: 0px;   
+    }
+    div .divCarrito {
+        width: 100%;
+    }
 }
-#cuadro3 {
-    grid-row: 1 / 1;
+p.tituloCuadro {
+    padding-top: 30%;
+    font-size: 35px;
+    font-family: 'Caveat', cursive;
+    color:white;
+    display: block;
+    position: absolute;
+    margin: 0px;
+    right: 0;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition-duration: 1s;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.37), rgba(0, 0, 0, 0)); 
 }
-#cuadro4 {
-    grid-row: 3 / 2;
+article {
+    margin-bottom: 5px;
+    text-align: center;
+    max-width: 100%;
+    filter: opacity(100%);
+    break-inside: avoid;
+    page-break-inside: avoid; 
+    transition: 1s all ease;        
 }
-#cuadro5 {
-    grid-row: 2 / 2;
+article:hover p.tituloCuadro {
+    opacity: 1;        
 }
-#cuadro6 {
-    grid-row: 2 / 3;
+article img {
+    width:100%;
+    border-radius: 10px;
 }
+
+
 .profile {
     display: inline-block;
     width: 300px;
@@ -175,9 +210,15 @@ div.containerCuadros {
   }
   .carrito {
       width: 55px;
-      transition-duration: 0.3s;
+      transition-duration: 0.5s;
       cursor: pointer;
+      margin-top: 20px;
+      opacity: 1;
   }
 .carrito:hover {
     cursor: pointer;
+    opacity: 0.5;
+    transform: translateY(-3.5px);
 }
+
+
