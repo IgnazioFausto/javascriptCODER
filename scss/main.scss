@@ -8,6 +8,7 @@ body {
     justify-content: center;
     background-image: url(../img/background.jpg);
     background-size:cover;
+    
 }
 h1 {
     display: inline-block;
@@ -153,7 +154,8 @@ article img {
 }
 .textoPresentacion {
     padding: 2rem;
-    width: auto;
+    max-width: 600px;
+    margin: 0 auto;
     font-family: 'Indie Flower', cursive;
     font-size: 30px;
 }

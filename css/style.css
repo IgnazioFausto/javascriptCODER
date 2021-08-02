@@ -148,7 +148,8 @@ article img {
 
 .textoPresentacion {
   padding: 2rem;
-  width: auto;
+  max-width: 600px;
+  margin: 0 auto;
   font-family: 'Indie Flower', cursive;
   font-size: 30px; }
 
