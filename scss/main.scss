@@ -9,7 +9,7 @@ html, body {
 body {
     position: relative;
     width: auto;
-    background-image: linear-gradient(rgb(124, 166, 223), pink);
+    background-image: linear-gradient(to top, rgb(124, 166, 223), pink);
     
 }
 h1 {
@@ -47,7 +47,7 @@ ul li{
 nav ul li a {
     display: inline-block;
     position: relative;
-    color: #f5e7df;
+    color: white;
     text-decoration: none;
     font-size: 30px;
     font-weight: 100;
@@ -59,12 +59,11 @@ nav ul li a:hover{
     opacity: 1;
     text-decoration-line:overline;
     text-decoration-style: solid;
-    text-decoration-color: #eaa287;
+    text-decoration-color:rgba(197, 217, 247, 0.514);
     color: #fbe5d6;
 }
 #Artista {
     padding-right: 20px;
-    padding-left: 10px;
 }
 #Obras {
     padding-left: 20px;
@@ -87,10 +86,7 @@ p#ingresaNombre {
     text-decoration: none;
     cursor: pointer;
 }
-p#ingresaNombre:hover{
-    color:#f0d3c0;
-    text-decoration: transparent;
-}
+
 .galeria {
     margin: 1rem auto;
     max-width:75%;
@@ -204,5 +200,36 @@ footer {
     transform: translateY(-1.5px);
 }
 
+div#contenedor-productos.row {
+    margin: 15px 10%;
+}
+div.fondo {
+    background-image: linear-gradient(to bottom, rgba(152, 186, 233, 0.712), pink);
 
+}
 
+.card-cuadro {
+    width: 90%;
+}
+
+input#nombre {
+    width: 150px;
+    height: 25px;
+    border-radius: 10px;
+    border-color: rgba(197, 217, 247, 0.514);
+}
+input#boton-guardar {
+    height: 30px;
+    font-size: 20px;
+    border-radius: 100%;
+    border-color: rgba(197, 217, 247, 0.514);
+}
+.textoInput {
+    font-size: 25px;
+    margin-bottom: 0px;
+    margin-top: 15px;
+    line-height: 1;
+}
+p {
+    margin-bottom: 0px;
+}

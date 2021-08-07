@@ -1,16 +1,41 @@
 
-let boton = document.getElementById("ingresaNombre")
+if (sessionStorage.getItem('Nombre')) {
 
-boton.addEventListener("click", saludar)
+       var nom = sessionStorage.getItem('Nombre')
+       $('#textoInput').css("display", "none" );
+        $('#nombre').css("display", "none" );
+        $('#boton-guardar').css("display", "none" );
+        $('#holaUser').append(
+            '<p>'+
+              '¡Hola ' + sessionStorage.getItem('Nombre') + '! Espero te guste mi obra...' + 
+            '</p>'
+          )
 
-function saludar(){
-    var nombreSession = prompt("Hola, escribí tu nombre!");
-    var parrafo = document.createElement("P");                      
-    var t = document.createTextNode("¡Hola " + nombreSession + "! Espero te agrade mi obra...");    
-    parrafo.appendChild(t);                                         
-    document.getElementById("saludo").appendChild(parrafo);
-    document.getElementById('ingresaNombre').style.display = 'none';
+
+
 }
+    else {
+      $(document).ready(function(){    
+        $('#boton-guardar').click(function(){     
+        /*Captura de datos escrito en los inputs*/        
+        var nom = document.getElementById('nombre').value;
+        /*Guardando los datos en el LocalStorage*/
+        sessionStorage.setItem('Nombre', nom);
+        /*Limpiando los campos o inputs*/
+        document.getElementById('nombre').value = '';
+        
+        $('#textoInput').css("display", "none" );
+        $('#nombre').css("display", "none" );
+        $('#boton-guardar').css("display", "none" );
+        $('#holaUser').append(
+            '<p>'+
+              '¡Hola ' + sessionStorage.getItem('Nombre') + '! Espero te guste mi obra...' + 
+            '</p>'
+          )
+    });   
+}); 
+
+
 
 
 
@@ -21,4 +46,4 @@ function saludar(){
 
 
 
-
+    }
