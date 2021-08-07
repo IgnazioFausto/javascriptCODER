@@ -12,8 +12,10 @@ function Cuadro (titulo, medidas, precio) {
  const pájaro = new Cuadro ("Pájaro", "45cm X 45cm", 1500)
  
  //array con todos los cuadros 
- const arrayCuadros = [perro, zorro, mar, vuelo, pareja, pájaro];
- 
+const arrayCuadros = [perro, zorro, mar, vuelo, pareja, pájaro];
+
+
+
  let cuadroEncontrado = undefined;
  
  // Function descuento 10% 
@@ -36,5 +38,5 @@ function Cuadro (titulo, medidas, precio) {
          
  }
  
-    // para filtrar por precios más adelante 
-    //const baratos = arrayCuadros.filter(Cuadro => Cuadro.precio < 3000);
+
+ 

@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0; }
 
+html, body {
+  scroll-behavior: smooth; }
+
 body {
   position: relative;
   width: auto;
@@ -74,6 +77,18 @@ nav ul li a:hover {
   text-align: center;
   font-family: 'Caveat', cursive;
   text-decoration: none; }
+
+p#saludo {
+  font-size: 55px; }
+
+p#ingresaNombre {
+  color: #f5e7df;
+  text-decoration: none;
+  cursor: pointer; }
+
+p#ingresaNombre:hover {
+  color: #f0d3c0;
+  text-decoration: transparent; }
 
 .galeria {
   margin: 1rem auto;
@@ -169,17 +184,14 @@ footer {
   width: auto;
   height: 100px; }
 
-.carrito {
+.carritoImg {
   width: 55px;
   transition-duration: 0.5s;
   cursor: pointer;
   margin-top: 20px;
   opacity: 1; }
 
-.carrito:hover {
+.carritoImg:hover {
   cursor: pointer;
   opacity: 0.5;
-  transform: translateY(-3.5px); }
-
-.listaCarrito {
-  display: none; }
+  transform: translateY(-1.5px); }
