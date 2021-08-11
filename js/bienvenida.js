@@ -15,7 +15,11 @@ if (sessionStorage.getItem('Nombre')) {
 
 }
     else {
+      
       $(document).ready(function(){    
+        $("#nombre").keydown(function(){
+          $("#nombre").css("background-color", "rgba(152, 186, 233, 0.512)");
+      });
         $('#boton-guardar').click(function(){     
         /*Captura de datos escrito en los inputs*/        
         var nom = document.getElementById('nombre').value;

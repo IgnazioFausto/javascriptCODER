@@ -46,7 +46,7 @@ const detectarBotones = (data) => {
             
             const producto = data.find(item => item.id === parseInt(btn.dataset.id))
             producto.cantidad = 1
-            carrito[producto.id] = { ...producto }
+            carrito[producto.id] = { ...producto }//para poder agregar mas
             
             pintarCarrito()
         })
