@@ -27,6 +27,7 @@ const fetchData = async () => {
         
         template.querySelector('img').setAttribute('src', producto.thumbnailUrl)
         template.querySelector('h5').textContent = producto.title
+        template.querySelector('h6').textContent = producto.medidas
         template.querySelector('p span').textContent = producto.precio
         template.querySelector('button').dataset.id = producto.id
         const clone = template.cloneNode(true)
@@ -66,7 +67,8 @@ const pintarCarrito = () => {
     Object.values(carrito).forEach(producto => {
         
         template.querySelectorAll('td')[0].textContent = producto.title
-        template.querySelector('span').textContent = producto.precio * producto.cantidad
+        template.querySelectorAll('td')[1].textContent = producto.medidas
+        template.querySelector('span').textContent = producto.precio
         //boton eliminar cuadro
         template.querySelector('.btn-danger').dataset.id = producto.id
         //para que no se superpongan entre cuadros selec.

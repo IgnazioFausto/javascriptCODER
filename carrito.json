@@ -3,36 +3,42 @@
         "precio": 7500,
         "id": 1,
         "title": "Perro",
+        "medidas": "98cm X 78cm",
         "thumbnailUrl": "img/cuadro1.jpg"
     },
     {
         "precio": 3500,
         "id": 2,
         "title": "Pájaro",
+        "medidas": "30cm X 30cm",
         "thumbnailUrl": "img/cuadro2.jpg"
     },
     {
         "precio": 2800,
         "id": 3,
         "title": "Vuelo",
+        "medidas": "68cm X 30cm",
         "thumbnailUrl": "img/cuadro3.jpg"
     },
     {
         "precio": 8500,
         "id": 4,
         "title": "Zorro",
+        "medidas": "98cm X 78cm",
         "thumbnailUrl": "img/cuadro4.jpg"
     },
     {
         "precio": 6200,
         "id": 5,
         "title": "Pareja",
+        "medidas": "69cm X 69cm",
         "thumbnailUrl": "img/cuadro5.jpg"
     },
     {
         "precio": 7100,
         "id": 6,
         "title": "Mar",
+        "medidas": "78cm X 98cm",
         "thumbnailUrl": "img/cuadro6.jpg"
     }
 ]
