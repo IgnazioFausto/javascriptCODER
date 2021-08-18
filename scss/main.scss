@@ -1,17 +1,21 @@
+/////////////////////general
 * {
     margin: 0;
     padding: 0;
 }
-
 html, body {
     scroll-behavior: smooth;
-  }
+}
 body {
     position: relative;
     width: auto;
-    background-image: linear-gradient(to top, rgb(124, 166, 223), pink);
-    
+    background-image: linear-gradient(to top, rgb(124, 166, 223), pink);   
 }
+div.fondo {
+    background-image: linear-gradient(to bottom, rgba(152, 186, 233, 0.712), pink);
+    border-radius: 10px;
+}
+//////////////////////////////header
 h1 {
     display: inline-block;
     position: relative;
@@ -27,6 +31,7 @@ h1 {
 h1:hover {
     letter-spacing: 18px;
 }
+/////////////////menu
 nav {
     display: inline;
     position: relative;
@@ -62,13 +67,27 @@ nav ul li a:hover{
     text-decoration-color:rgba(197, 217, 247, 0.514);
     color: #fbe5d6;
 }
+//////////////////////////////sections
 #Artista {
     padding-right: 20px;
+}
+.profile {
+    display: inline-block;
+    width: 300px;
+    border-radius: 100%;
+}
+.textoPresentacion {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
 }
 #Obras {
     padding-left: 20px;
     padding-right: 10px;
 }
+/////////////////////////saludo bienvenida
 #saludo {
     background-color: transparent;
     font-size: 35px;
@@ -86,137 +105,12 @@ p#ingresaNombre {
     text-decoration: none;
     cursor: pointer;
 }
-
-.galeria {
-    margin: 1rem auto;
-    max-width:75%;
-    padding:0px;
-    height: auto;
-    box-sizing: border-box;
-    column-count: 2;
-    column-gap: 10px;
-}
-/* Móviles en horizontal o tablets en vertical */
-@media (max-width: 767px) { 
-    .galeria {
-        columns:2;
-    }
-}
-/* Móviles en vertical */
-@media (max-width: 480px) {
-    .galeria {
-        columns: 1;
-    }
-    h1 {
-        display: inline-block;
-        position: relative;
-        text-align: center;
-        color: black;
-        font-size: 40px;
-        margin-top: 10px;
-        font-family: 'Alegreya', serif;
-        font-weight: 100;
-        transition-duration: 0.8s;
-        letter-spacing: 0px;   
-    }
-    div .divCarrito {
-        width: 100%;
-    }
-}
-.tituloCuadro {
-    font-family: 'Alegreya', serif;
-    font-size: 30px;
-    font-weight: 900;
-    margin: 10px auto;
-}
-.card-body {
-    padding: 0;
-}
-.card-text {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-style: italic;
-}
-.añadirCarrito {
-    color: red;
-    transition-duration: 0.2s;
-}
-.añadirCarrito:hover {
-    text-decoration: none;
-    color: rosybrown;
-    cursor: pointer;
-}
-article {
-    margin-bottom: 5px;
-    text-align: center;
-    max-width: 100%;
-    break-inside: avoid;
-    page-break-inside: avoid; 
-    
-}
-img.cuadro {
-   width: 100%;
-}
-
-.profile {
-    display: inline-block;
-    width: 300px;
-    border-radius: 100%;
-}
-.textoPresentacion {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: 'Indie Flower', cursive;
-    font-size: 30px;
-}
-.iconRedes {
-    width: 90px;
-    transition-duration: 0.5s;
-}
-.iconRedes:hover {
-    transform: rotate(5deg);
-}
-footer {
-    background-color: transparent;
-    height: 30px;
-    margin-top: 200px;
-    font-family: 'Alegreya', serif;
-    font-weight: 900;
-}
-  .divCarrito {
-      width: auto;
-      height: 100px;
-  }
-  .carritoImg {
-      width: 55px;
-      transition-duration: 0.5s;
-      cursor: pointer;
-      margin-top: 20px;
-      opacity: 1;
-  }
-.carritoImg:hover {
-    cursor: pointer;
-    opacity: 0.5;
-    transform: translateY(-1.5px);
-}
-
-div#contenedor-productos.row {
-    margin: 15px 10%;
-}
-div.fondo {
-    background-image: linear-gradient(to bottom, rgba(152, 186, 233, 0.712), pink);
-
-}
-
-.card-cuadro {
-    width: 90%;
-}
-
 input#nombre {
     width: 150px;
     height: 25px;
     border-radius: 10px;
     border-color: rgba(197, 217, 247, 0.514);
+    font-size: 22px;
 }
 input#boton-guardar {
     height: 30px;
@@ -224,12 +118,69 @@ input#boton-guardar {
     border-radius: 100%;
     border-color: rgba(197, 217, 247, 0.514);
 }
-.textoInput {
-    font-size: 25px;
-    margin-bottom: 0px;
-    margin-top: 15px;
-    line-height: 1;
+////////////////////////carrito
+.divCarrito {
+    width: auto;
+    height: 100px;
+}
+.carritoImg {
+    width: 55px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    margin-top: 20px;
+    opacity: 1;
+}
+.carritoImg:hover {
+    cursor: pointer;
+    opacity: 0.5;
+    transform: translateY(-1px);
+}
+div#contenedor-productos.row {
+    margin: 15px 10%;
 }
 p {
     margin-bottom: 0px;
 }
+img.card-img-top {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+p span {
+    letter-spacing: 1.5px;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+}
+///////////////////////templates de cuadros
+h5 {
+    font-family: 'Alegreya', serif;
+    font-size: 30px;
+    font-weight: 900;
+    margin: 10px auto;
+}
+h6 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+.card-body {
+    padding: 0;
+}
+//////////////////////////RRSS icons
+.iconRedes {
+    width: 90px;
+    transition-duration: 0.5s;
+}
+.iconRedes:hover {
+    transform: rotate(5deg);
+}
+/////////////////////////footer
+footer {
+    background-color: rgba(255, 255, 255, 0.09);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 50px;
+    margin-top: 200px;
+    font-family: 'Alegreya', serif;
+    font-weight: 900;
+}
+
+

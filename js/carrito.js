@@ -70,7 +70,7 @@ const pintarCarrito = () => {
         template.querySelectorAll('td')[1].textContent = producto.medidas
         template.querySelector('span').textContent = producto.precio
         //boton eliminar cuadro
-        template.querySelector('.btn-danger').dataset.id = producto.id
+        template.querySelector('.btn-outline-danger').dataset.id = producto.id
         //para que no se superpongan entre cuadros selec.
         const clone = template.cloneNode(true)
         fragment.appendChild(clone)
