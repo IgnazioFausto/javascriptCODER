@@ -169,6 +169,9 @@ footer {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   height: 50px;
-  margin-top: 200px;
+  margin-top: 200px; }
+
+footer p {
   font-family: 'Alegreya', serif;
-  font-weight: 900; }
+  font-weight: 900;
+  padding-top: 15px; }

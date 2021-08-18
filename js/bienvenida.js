@@ -1,39 +1,31 @@
-
+//si hay una key 'Nombre' en el Session se muestra el saludo usando su value
 if (sessionStorage.getItem('Nombre')) {
-
        var nom = sessionStorage.getItem('Nombre')
        $('#textoInput').css("display", "none" );
         $('#nombre').css("display", "none" );
         $('#boton-guardar').css("display", "none" );
         $('#holaUser').append(
-            '<p>'+
-              '¡Hola ' + sessionStorage.getItem('Nombre') + '! Espero te guste mi obra...' + 
+            '<p>' +
+              '¡Hola ' + nom + '! Espero te guste mi obra...' + 
             '</p>'
           )
-
-
-
-}
+}   //sino, se muestra input y se guarda el value en Session
     else {
-      
       $(document).ready(function(){    
         $("#nombre").keydown(function(){
           $("#nombre").css("background-color", "rgba(152, 186, 233, 0.512)");
       });
         $('#boton-guardar').click(function(){     
-        /*Captura de datos escrito en los inputs*/        
-        var nom = document.getElementById('nombre').value;
-        /*Guardando los datos en el LocalStorage*/
-        sessionStorage.setItem('Nombre', nom);
-        /*Limpiando los campos o inputs*/
-        document.getElementById('nombre').value = '';
-        
+        var nom = $('#nombre').val();//asigno a nom el valor del input
+        sessionStorage.setItem('Nombre', nom);//guardando en el SS
+        $('#nombre').val('');//limpiar el input
+        /*saco el input y agrego el saludo*/
         $('#textoInput').css("display", "none" );
         $('#nombre').css("display", "none" );
         $('#boton-guardar').css("display", "none" );
         $('#holaUser').append(
             '<p>'+
-              '¡Hola ' + sessionStorage.getItem('Nombre') + '! Espero te guste mi obra...' + 
+              '¡Hola ' + nom + '! Espero te guste mi obra...' + 
             '</p>'
           )
     });   
