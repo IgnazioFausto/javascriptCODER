@@ -104,10 +104,37 @@ const pintarFooter = () => {
     footer.appendChild(fragment);
 
     //para vaciar el carrito
-    const boton = document.querySelector('#vaciar-carrito');
+    var boton = document.querySelector('#vaciar-carrito');
     boton.addEventListener('click', () => {
         carrito = {};
         pintarCarrito();
+        $('#comprar-carrito').hide();
+        $('#vaciar-carrito').hide();
+    })
+    //para comprar el carrito
+    var boton = document.querySelector('#comprar-carrito');
+    boton.addEventListener('click', () => {
+        $('.spinner-border').css("display", "inline-block")
+        .delay(6000)
+        .fadeOut();
+        $('.table').slideUp("fast");
+        $('#aviso-compra').delay(6000).hide().append(`
+
+        <div class="alert alert-success alertaCompra">
+        <strong>¡Listo!</strong> La compra se ha realizado con éxito.</div>
+        `)
+        .fadeIn("slow");
+        $('#aviso-compra')
+        .delay(6000)
+        .slideUp(1000, function (){
+            $('#aviso-compra')
+            .empty();
+        });
+        carrito = {};
+        pintarCarrito();
+        $('#comprar-carrito').hide();
+        $('#vaciar-carrito').hide();
+        $('.table').delay(12000).fadeIn(1000);
     })
 
 }
