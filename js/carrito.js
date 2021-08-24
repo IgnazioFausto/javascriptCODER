@@ -2,20 +2,17 @@
 
 //recupero datos de json
 document.addEventListener("DOMContentLoaded", () => {
-    fetchData()
-})
-
-const fetchData = async () => {
-    try {
-        const res = await fetch('carrito.json')
-        const data = await res.json()
-        pintarProductos(data)
-        detectarBotones(data)
-    } catch (error) {
-        console.log(error)//por si tiene error
-    }
-}
-
+    $.ajax('carrito.json')
+    .done( async () => {
+            const res = await fetch('carrito.json')
+            const data = await res.json()
+            pintarProductos(data)
+            detectarBotones(data)
+        })
+        .fail(console.log(error))
+        
+        }
+)
 
 //ordenando los cuadros en template
     const contendorProductos = document.querySelector('#contenedor-productos')
@@ -115,9 +112,9 @@ const pintarFooter = () => {
     var boton = document.querySelector('#comprar-carrito');
     boton.addEventListener('click', () => {
         $('.spinner-border').css("display", "inline-block")
-        .delay(6000)
-        .fadeOut();
-        $('.table').slideUp("fast");
+        .delay(5000)
+        .fadeOut(1000);
+        $('.table').hide();
         $('#aviso-compra').delay(6000).hide().append(`
 
         <div class="alert alert-success alertaCompra">
