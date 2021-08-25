@@ -2,7 +2,10 @@
 
 //recupero datos de json
 document.addEventListener("DOMContentLoaded", () => {
-    $.ajax('carrito.json')
+    $.ajax({
+        url:'carrito.json',
+        type: 'GET',
+    })
     .done( async () => {
             const res = await fetch('carrito.json')
             const data = await res.json()
@@ -74,7 +77,7 @@ const pintarCarrito = () => {
     })
 
     items.appendChild(fragment)
-
+    
     pintarFooter()
     accionBotones()
 
@@ -87,14 +90,12 @@ const pintarFooter = () => {
 
     const template = document.querySelector('#template-footer').content;
     const fragment = document.createDocumentFragment();
-
     // sumar cantidad de cuadros y sumar totales $
     const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0);
     const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0);
 
     template.querySelectorAll('td')[0].textContent = nCantidad;
     template.querySelector('span').textContent = nPrecio;
-
     const clone = template.cloneNode(true);
     fragment.appendChild(clone);
 
