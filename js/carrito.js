@@ -1,7 +1,7 @@
 /* carrito */
 
 //recupero datos de json
-document.addEventListener("DOMContentLoaded", () => {
+$(document).ready(function () {
     $.ajax({
         url:'carrito.json',
         type: 'GET',
@@ -12,13 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
             pintarProductos(data)
             detectarBotones(data)
         })
-        .fail(console.log(error))
-        
-        }
+        .fail(function(error){
+            console.error('Error al cargar JSON', error);
+        });
+    }
 )
 
 //ordenando los cuadros en template
-    const contendorProductos = document.querySelector('#contenedor-productos')
+    const contendorProductos = $('#contenedor-productos')
     const pintarProductos = (data) => {
     const template = document.querySelector('#template-productos').content
     const fragment = document.createDocumentFragment()
@@ -33,18 +34,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const clone = template.cloneNode(true)
         fragment.appendChild(clone)
     })
-    contendorProductos.appendChild(fragment)
+    $('#contenedor-productos').prepend(fragment); 
 }
-//array de carrito
+//array de carrito 
 let carrito = {}
-
 /* Botones */
 const detectarBotones = (data) => {
     const botones = document.querySelectorAll('.card button')
-
+    
     botones.forEach(btn => {
-        btn.addEventListener('click', () => {
-            
+        $(btn).click(function () { 
             const producto = data.find(item => item.id === parseInt(btn.dataset.id))
             producto.cantidad = 1
             carrito[producto.id] = { ...producto }//para poder agregar mas
@@ -75,13 +74,12 @@ const pintarCarrito = () => {
         const clone = template.cloneNode(true)
         fragment.appendChild(clone)
     })
+    $('#items').prepend(fragment);
 
-    items.appendChild(fragment)
-    
     pintarFooter()
     accionBotones()
-
 }
+
 //footer del carrito
 const footer = document.querySelector('#footer-carrito')
 const pintarFooter = () => {
@@ -97,42 +95,41 @@ const pintarFooter = () => {
     template.querySelectorAll('td')[0].textContent = nCantidad;
     template.querySelector('span').textContent = nPrecio;
     const clone = template.cloneNode(true);
-    fragment.appendChild(clone);
-
-    footer.appendChild(fragment);
+    $(fragment).prepend(clone); 
+    $(footer).prepend(fragment);
 
     //para vaciar el carrito
-    var boton = document.querySelector('#vaciar-carrito');
-    boton.addEventListener('click', () => {
-        carrito = {};
+    var boton = $('#vaciar-carrito');
+    $(boton).click( () => { 
+        carrito = {};//señalamos que el carrito debe quedar vacío.
         pintarCarrito();
-        $('#comprar-carrito').hide();
-        $('#vaciar-carrito').hide();
+        $('#comprar-carrito').hide(); //escondemos botones de
+        $('#vaciar-carrito').hide();  //comprar y vaciar carrito.
     })
     //para comprar el carrito
-    var boton = document.querySelector('#comprar-carrito');
-    boton.addEventListener('click', () => {
-        $('.spinner-border').css("display", "inline-block")
+    var boton = $('#comprar-carrito');
+    $(boton).click( () => {
+        $('.spinner-border').css("display", "inline-block")//spinner cargando
         .delay(5000)
         .fadeOut(1000);
-        $('.table').hide();
-        $('#aviso-compra').delay(6000).hide().append(`
+        $('.table').hide(); //se esconde la tabla
+        $('#aviso-compra').delay(6000).hide().append(`  
 
         <div class="alert alert-success alertaCompra">
-        <strong>¡Listo!</strong> La compra se ha realizado con éxito.</div>
-        `)
+        <strong>¡Listo!</strong> La compra se ha realizado con éxito.</div> 
+        `) //aviso de compra
         .fadeIn("slow");
-        $('#aviso-compra')
+        $('#aviso-compra') 
         .delay(6000)
         .slideUp(1000, function (){
             $('#aviso-compra')
             .empty();
         });
-        carrito = {};
-        pintarCarrito();
-        $('#comprar-carrito').hide();
-        $('#vaciar-carrito').hide();
-        $('.table').delay(12000).fadeIn(1000);
+        carrito = {}; //se vacia el carrito
+        pintarCarrito(); 
+        $('#comprar-carrito').hide(); //escondemos botones de
+        $('#vaciar-carrito').hide();  //comprar y vaciar carrito.
+        $('.table').delay(12000).fadeIn(1000); //regresa la tabla 
     })
 
 }
@@ -141,7 +138,7 @@ const accionBotones = () => {
     const botonesEliminar = document.querySelectorAll('#items .btn-danger');
 
     botonesEliminar.forEach(btn => {
-        btn.addEventListener('click', () => {
+        $(btn).click(function () { 
             //quitar cuadros
             const producto = carrito[btn.dataset.id]
             producto.cantidad--
