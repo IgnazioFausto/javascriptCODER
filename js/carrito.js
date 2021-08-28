@@ -38,6 +38,7 @@ $(document).ready(function () {
 }
 //array de carrito 
 let carrito = {}
+
 /* Botones */
 const detectarBotones = (data) => {
     const botones = document.querySelectorAll('.card button')
@@ -98,6 +99,12 @@ const pintarFooter = () => {
     $(fragment).prepend(clone); 
     $(footer).prepend(fragment);
 
+    // para ocultar o mostrar el footer-carrito, dependiendo de si hay o no cuadros en la tabla
+    if (nCantidad === 0 ) {
+        $('.container-table').slideUp(1000);
+    }else {
+        $('.container-table').slideDown(1000);
+    }
     //para vaciar el carrito
     var boton = $('#vaciar-carrito');
     $(boton).click( () => { 
@@ -127,9 +134,7 @@ const pintarFooter = () => {
         });
         carrito = {}; //se vacia el carrito
         pintarCarrito(); 
-        $('#comprar-carrito').hide(); //escondemos botones de
-        $('#vaciar-carrito').hide();  //comprar y vaciar carrito.
-        $('.table').delay(12000).fadeIn(1000); //regresa la tabla 
+        $('.container-table').slideUp(1000);
     })
 
 }
