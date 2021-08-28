@@ -53,7 +53,7 @@ const detectarBotones = (data) => {
         })
     })
 }
-//tomando los items con querySelector
+//tomando los items
 const items = document.querySelector('#items')
 //items en el carrito
 const pintarCarrito = () => {
@@ -110,8 +110,7 @@ const pintarFooter = () => {
     $(boton).click( () => { 
         carrito = {};//señalamos que el carrito debe quedar vacío.
         pintarCarrito();
-        $('#comprar-carrito').hide(); //escondemos botones de
-        $('#vaciar-carrito').hide();  //comprar y vaciar carrito.
+        $('#comprar-carrito, #vaciar-carrito').hide(); //escondemos botones de comprar y vaciar carrito.
     })
     //para comprar el carrito
     var boton = $('#comprar-carrito');
@@ -119,7 +118,7 @@ const pintarFooter = () => {
         $('.spinner-border').css("display", "inline-block")//spinner cargando
         .delay(5000)
         .fadeOut(1000);
-        $('.table').hide(); //se esconde la tabla
+        $('.container-table').hide(); //se esconde el container de la tabla
         $('#aviso-compra').delay(6000).hide().append(`  
 
         <div class="alert alert-success alertaCompra">
@@ -134,11 +133,10 @@ const pintarFooter = () => {
         });
         carrito = {}; //se vacia el carrito
         pintarCarrito(); 
-        $('.container-table').slideUp(1000);
+        $('#comprar-carrito').hide(); //escondemos botones de
+        $('#vaciar-carrito').hide();  //comprar y vaciar carrito.
     })
-
 }
-
 const accionBotones = () => {
     const botonesEliminar = document.querySelectorAll('#items .btn-danger');
 
