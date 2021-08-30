@@ -6,18 +6,19 @@ $(document).ready(function () {
         url:'carrito.json',
         type: 'GET',
     })
+    //si la llamada es exitosa
     .done( async () => {
             const res = await fetch('carrito.json')
             const data = await res.json()
             pintarProductos(data)
             detectarBotones(data)
         })
+        //si falla...
         .fail(function(error){
             console.error('Error al cargar JSON', error);
         });
     }
 )
-
 //ordenando los cuadros en template
     const contendorProductos = $('#contenedor-productos')
     const pintarProductos = (data) => {
@@ -41,7 +42,7 @@ let carrito = {}
 
 /* Botones */
 const detectarBotones = (data) => {
-    const botones = document.querySelectorAll('.card button')
+    const botones = document.querySelectorAll('button')
     
     botones.forEach(btn => {
         $(btn).click(function () { 
@@ -54,7 +55,7 @@ const detectarBotones = (data) => {
     })
 }
 //tomando los items
-const items = document.querySelector('#items')
+const items = document.querySelector("#items")
 //items en el carrito
 const pintarCarrito = () => {
 
@@ -75,7 +76,7 @@ const pintarCarrito = () => {
         const clone = template.cloneNode(true)
         fragment.appendChild(clone)
     })
-    $('#items').prepend(fragment);
+    $("#items").prepend(fragment);
 
     pintarFooter()
     accionBotones()
@@ -92,7 +93,7 @@ const pintarFooter = () => {
     // sumar cantidad de cuadros y sumar totales $
     const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0);
     const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0);
-
+    //mostrar cantidad de cuadros y total.
     template.querySelectorAll('td')[0].textContent = nCantidad;
     template.querySelector('span').textContent = nPrecio;
     const clone = template.cloneNode(true);
